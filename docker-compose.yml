@@ -3,7 +3,7 @@ services:
  frontend:
   build:
    context: ./frontend
-   dockerfile: DockerfileFrontendSRS
+   dockerfile: DockerfileFrontendRECUS
   ports:
    - "3000:3000"
   volumes:
@@ -16,7 +16,7 @@ services:
  backend:
   build:
    context: ./backend
-   dockerfile: DockerfileBackendSRS
+   dockerfile: DockerfileBackendRECUS
   command: bash -c "composer install && php -S 0.0.0.0:8000 -t public"
   ports:
    - "8000:8000"
@@ -27,7 +27,7 @@ services:
  nginx:
   build:
    context: ./nginx
-   dockerfile: DockerfileWebSRS
+   dockerfile: DockerfileWebRECUS
   ports:
    - "80:80" # si tienes problemas con el puerto 80 cambia el puerto  # externo aquí
   networks:
